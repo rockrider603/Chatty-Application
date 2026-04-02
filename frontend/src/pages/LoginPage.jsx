@@ -28,7 +28,7 @@ const LoginPage = () => {
     if (!/\S+@\S+\.\S+/.test(formData.email)) return toast.error("Invalid email format");
     //to check if password exists and its length is 6 characters+.
     if (!formData.password) return toast.error("Password is required");
-    if (formData.password.length < 6) return toast.error("Password must be at least 6 characters");
+    if (formData.password?.length ||0 < 6) return toast.error("Password must be at least 6 characters");
 
     return true;
   };
